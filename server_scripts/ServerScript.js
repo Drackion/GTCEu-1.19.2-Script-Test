@@ -815,6 +815,14 @@ GTCEuServerEvents.recipe(event => {
 		.duration(640)
 		.EUt(30)
 	.save(event.provider);
+	
+	event.builder("ImprovedCokeOven_recipe_type", "ImprovedCokeOven_type")
+		.itemInputs("#minecraft:logs")
+		.itemOutputs("minecraft:charcoal")
+		.outputFluids("gtceu:wood_tar 250")
+		.duration(640)
+		.EUt(6)
+	.save(event.provider);
 
 	
 	

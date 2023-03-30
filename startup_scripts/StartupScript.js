@@ -24,7 +24,7 @@ StartupEvents.registry('fluid', event => {
 		.displayName('Energized Ooze')
 		.noBlock()
 	event.create('liquid_pollen')
-		.thickTexture(0xf5e213)
+		.thinTexture(0xf5e213)
 		.displayName('Liquid Pollen')
 		.noBlock()
 })
@@ -42,6 +42,16 @@ GTCEuStartupEvents.recipeType(event => {
 		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
 		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
 	.setSound(GTSoundEntries.COOLING)
+	
+	event.create("PrimitiveAssembler_recipe_type").setIOSize(1, 9, 1, 1, 0, 1, 0, 0)
+		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+		.setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, FillDirection.LEFT_TO_RIGHT)
+	.setSound(GTSoundEntries.ASSEMBLER)
+
+	event.create("ImprovedCokeOven_recipe_type").setIOSize(1, 1, 1, 1, 0, 0, 1, 1)
+		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
+	.setSound(GTSoundEntries.FIRE)
 })
 
 GTCEuStartupEvents.machine(event => {
@@ -93,5 +103,25 @@ GTCEuStartupEvents.machine(event => {
 			.build())
 		.workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel",
 			"gtceu:block/multiblock/implosion_compressor", false)
+	.register();
+	
+	event.simpleSteamMachines("primitive_assembler", "PrimitiveAssembler_recipe_type")
+
+	event.simpleMultiblock("Improved Coke Oven")
+		.rotationState(RotationState.NON_Y_AXIS)
+		.recipeType("ImprovedCokeOven_recipe_type")
+		.appearanceBlock(GTBlocks.CASING_BRONZE_BRICKS)
+		.pattern(definition => FactoryBlockPattern.start()
+			.aisle("BBB", "CCC", "BBB")
+			.aisle("BBB", "C#C", "BBB")
+			.aisle("BKB", "CCC", "BBB")
+			.where('K', Predicates.controller(Predicates.blocks(definition.get())))
+			.where('C', Predicates.blocks(GTBlocks.COIL_CUPRONICKEL.get()))
+			.where('#', Predicates.air())
+			.where('B', Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get()).setMinGlobalLimited(1)
+				.or(Predicates.autoAbilities(definition.getRecipeType())))
+			.build())
+		.workableCasingRenderer("gtceu:block/casings/solid/machine_bronze_plated_bricks",
+			"gtceu:block/multiblock/coke_oven", false)
 	.register();
 })

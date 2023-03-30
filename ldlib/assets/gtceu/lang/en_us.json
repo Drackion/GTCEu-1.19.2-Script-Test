@@ -1,0 +1,10 @@
+{
+    "block.gtceu.steam_primitive_assembler.bronze": "Small Primitive Steam Assembler",
+    "block.gtceu.steam_primitive_assembler.steel": "High Pressure Primitive Steam Assembler",
+    "block.gtceu.greenhouse_multiblock": "Greenhouse",
+    "block.gtceu.Industrial Hive": "Industrial Hive",
+    "gtceu.greenhouse_recipe_type": "Greenhouse",
+    "gtceu.industrial_hive_recipe_type": "Industrial Hive",
+    "gtceu.improved_coke_oven_recipe_type": "Improved Coke Oven",
+    "block.gtceu.Improved Coke Oven": "Improved Coke Oven"
+}

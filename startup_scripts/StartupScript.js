@@ -52,6 +52,11 @@ GTCEuStartupEvents.recipeType(event => {
 		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
 		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
 	.setSound(GTSoundEntries.FIRE)
+	
+	event.create("energizer_recipe_type").setIOSize(1, 3, 1, 3, 0, 1, 0, 1)
+		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
+	.setSound(GTSoundEntries.ARC)
 })
 
 GTCEuStartupEvents.machine(event => {
@@ -105,7 +110,9 @@ GTCEuStartupEvents.machine(event => {
 			"gtceu:block/multiblock/implosion_compressor", false)
 	.register();
 	
-	event.simpleSteamMachines("primitive_assembler", "PrimitiveAssembler_recipe_type")
+	event.simpleSteamMachines("primitive_assembler", "PrimitiveAssembler_recipe_type");
+	
+	event.simpleMachines("energizer", "energizer_recipe_type", tier => 3200, GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV);
 
 	event.simpleMultiblock("Improved Coke Oven")
 		.rotationState(RotationState.NON_Y_AXIS)

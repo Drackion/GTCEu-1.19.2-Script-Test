@@ -1,6 +1,8 @@
 # GTCEu-1.19.2-Script-Test
 This contains my kubejs 6 scripts and assets used for testing with GTCEu 1.19.2
 
+The ldlib folder is the only folder that doesn't go into the Kubejs folder, instead it goes into the main directory with the kubejs folder, the ldlib folder contains the Lang file and Textures (single block only) for the machines created via the kubejs scripts
+
 # Mod List Forge 43.2.3
 - Ae2: 12.9.2
 - Architectury: 6.5.69

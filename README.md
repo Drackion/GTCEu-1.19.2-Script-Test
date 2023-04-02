@@ -25,11 +25,11 @@ The ldlib folder is the only folder that doesn't go into the Kubejs folder, inst
 - Enity Collision FPS fix
 - Better Render Distance FPS
 - FPS Reducer (reduces cpu, ram and gpu usage while tabed out)
-- GTCEU: 1.0.1
+- GTCEU: 1.0.2
 - Kubejs: 1902.6.0-build.142
 - Kubejs Create: 1902.1.1-build.32
 - Lazy DFU: 1.0.2
-- LDlib: 1.0.3
+- LDlib: 1.0.4b
 - Pipez: 1.0.1
 - Probejs: 4.4.0
 - REI: 9.1.595

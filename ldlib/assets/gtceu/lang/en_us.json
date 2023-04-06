@@ -12,5 +12,10 @@
     "block.gtceu.energizer.mv": "Energizer",
     "block.gtceu.energizer.hv": "Energizer",
     "block.gtceu.energizer.ev": "Energizer",
-    "block.gtceu.energizer.iv": "Energizer"
+    "block.gtceu.energizer.iv": "Energizer",
+    "gtceu.jei.multiblock_info": "Multiblock Preview",
+    "block.gtceu.fusion_reactor": "Fusion Reactor",
+    "gtceu.fusion_reactor": "Fusion Reactor",
+    "block.gtceu.fusion_mk0": "Fusion MK 0",
+    "gtceu.fusion_mk0": "Fusion MK 0"
 }

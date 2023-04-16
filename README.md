@@ -39,3 +39,4 @@ The ldlib folder is the only folder that doesn't go into the Kubejs folder, inst
 - Titanium: 3.7.2-26
 - ShutUpExperimentalSettings: 1.0.5
 - XtonesReworked: 1.0.1-1.19.2-43.2.0
+- ExNihiloSequentia: 1.19.2-4.1.0.55-beta

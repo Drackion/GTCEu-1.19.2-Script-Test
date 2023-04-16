@@ -5,6 +5,13 @@ console.info('Hello, World! (You will see this line every time server resources 
 ServerEvents.recipes(event => {
 	event.remove({id:"prettypipes:item_terminal"})
 	event.shaped('1x prettypipes:crafting_terminal', ['PRP', 'CTC', 'PRP'], {P: 'gtceu:plate_double.steel', R: 'kubejs:robot.arm.primitive', C: 'kubejs:conveyor.primitive', T: 'minecraft:crafting_table'}).id('prettypipes:crafting_terminal')
+	event.shaped('2x functionalstorage:ender_drawer', ['PPP', 'SDE', 'PPP'], {P: 'gtceu:plate_double.steel', D: '#functionalstorage:drawer', E: 'gtceu:emitter.lv', S:'gtceu:sensor.lv'}).id('functionalstorage:ender_drawer')
+	event.shaped('1x exnihilosequentia:flint_mesh', ['RSR', 'SRS', 'RSR'], {S: 'minecraft:string', R: 'gtceu:stick.bronze'}).id('exnihilosequentia:ens_flint_mesh')
+	event.shaped('1x exnihilosequentia:iron_mesh', ['RSR', 'SRS', 'RSR'], {S: 'minecraft:string', R: 'gtceu:stick.steel'}).id('exnihilosequentia:ens_iron_mesh')
+	event.shaped('1x exnihilosequentia:diamond_mesh', ['RSR', 'SRS', 'RSR'], {S: 'minecraft:string', R: 'gtceu:stick.aluminium'}).id('exnihilosequentia:ens_diamond_mesh')
+	event.shaped('1x exnihilosequentia:emerald_mesh', ['RSR', 'SRS', 'RSR'], {S: 'minecraft:string', R: 'gtceu:stick.stainless_steel'}).id('exnihilosequentia:ens_emerald_mesh')
+	event.shaped('1x exnihilosequentia:netherite_mesh', ['RSR', 'SRS', 'RSR'], {S: 'minecraft:string', R: 'gtceu:stick.titanium'}).id('exnihilosequentia:ens_netherite_mesh')
+	
 	let inter = 'gtceu:circuit_board.basic'
 	event.recipes.createSequencedAssembly(
 		[
@@ -38,13 +45,16 @@ ServerEvents.recipes(event => {
 		[
 			Item.of('gtceu:wire_single.copper').withChance(0.5).toJson(),
 			Item.of('gtceu:wire_single.cupronickel').withChance(0.5).toJson(),
-			Item.of('gtceu:foil.bronze').withChance(0.5).toJson()
+			Item.of('5x gtceu:foil.bronze').withChance(0.5).toJson()
 		],
 		[
 			Item.of('gtceu:wire_coil_cupronickel'), 'createsifter:brass_mesh'
 		]
 	).processingTime(20)
 
+	event.recipes.createCrushing(['gtceu:dust_impure.iron', Item.of('gtceu:dust_impure.iron').withChance(0.1)], 'gtceu:ore_iron')
+
+	event.recipes.createSplashing(['4x gtceu:dust_small.iron', Item.of('gtceu:dust_small.iron').withChance(0.1), Item.of('gtceu:dust_small.iron').withChance(0.1)], 'gtceu:dust_impure.iron')
 
 	//alloy smelter
 	event.custom(
@@ -306,7 +316,7 @@ ServerEvents.recipes(event => {
 	AE2Proccesors("gtceu:red_alloy", "ae2:printed_engineering_processor", "ae2:printed_silicon", "forge:circuit/lv", "ae2:engineering_processor")
 
 	//wiremill
-	event.custom(
+	/*event.custom(
 		{
 			type: "gtceu:gt_recipe_serializer",
 			duration: 120,
@@ -348,88 +358,9 @@ ServerEvents.recipes(event => {
 				]
 			}
 		}
-	)
+	)*/
 
 	//EBF
-	function EBF(Temp, Dur, InItCo1, InIt1, InItCo2, InIt2, InItCo3, InIt3, InFlAm, InFl, OuItCo, OuIt, EU) {
-		event.custom(
-			{
-				type: "gtceu:gt_recipe_serializer",
-				data: {
-					ebf_temp: Temp,
-				},
-				duration: Dur,
-				inputs: {
-					item: [
-						{
-							chance: 1.0,
-							content: {
-								type: "gtceu:sized",
-								count: InItCo1,
-								ingredient: {
-									item: InIt1
-								}
-							}
-						},
-						{
-							chance: 1.0,
-							content: {
-								type: "gtceu:sized",
-								count: InItCo2,
-								ingredient: {
-									item: InIt2
-								}
-							}
-						},
-						{
-							chance: 1.0,
-							content: {
-								type: "gtceu:sized",
-								count: InItCo3,
-								ingredient: {
-									item: InIt3
-								}
-							}
-						}
-					],
-					fluid: [
-						{
-							chance: 1.0,
-							content: {
-								amount: InFlAm,
-								fluid: InFl
-							}
-						}
-					]
-				},
-				outputs: {
-					item: [
-						{
-							chance: 1.0,
-							content: {
-								type: "gtceu:sized",
-								count: OuItCo,
-								ingredient: {
-									item: OuIt
-								}
-							}
-						}
-					]
-				},
-				recipe_type: "gtceu:electric_blast_furnace",
-				tickInputs: {
-					eu: [
-						{
-							chance: 1.0,
-							content: EU
-						}
-					]
-				}
-			}
-		)
-	}
-
-	EBF(420, 420, 1, "minecraft:quartz", 1, "minecraft:redstone", 1, "ae2:charged_certus_quartz_crystal", 1000, "minecraft:water", 2, "ae2:fluix_crystal", 69)
 
 	event.custom(
 		{
@@ -466,7 +397,7 @@ ServerEvents.recipes(event => {
 						chance: 1.0,
 						content: {
 							amount: 1000,
-							fluid: "kubejs:Energized_Ooze"
+							fluid: "kubejs:energized_ooze"
 						}
 					}
 				]
@@ -635,7 +566,7 @@ ServerEvents.recipes(event => {
 						chance: 1.0,
 						content: {
 							amount: 1000,
-							fluid: "kubejs:Mysterious_Ooze"
+							fluid: "kubejs:mysterious_ooze"
 						}
 					}
 				]
@@ -957,7 +888,44 @@ GTCEuServerEvents.recipe(event => {
 		.duration(1)
 		.outputEU(16384)
 	.save(event.provider);
-	
+
+	//compressor test
+	event.builder("compressor", "dirt-diamond")
+		.itemInputs("minecraft:dirt")
+		.itemOutputs("minecraft:diamond")
+		.duration(100)
+		.EUt(6)
+	.save(event.provider);
+
+	//Wiremill
+	event.builder("wiremill", "fine.fluix-wire")
+		.itemInputs("ae2:fluix_crystal")
+		.itemOutputs("16x kubejs:wire.fine_fluix")
+		.duration(120)
+		.EUt(16)
+	.save(event.provider);
+
+	function test(Recipe, Input, Output, Duration, EU){
+		event.builder("compressor", Recipe)
+		.itemInputs(Input)
+		.itemOutputs(Output)
+		.duration(Duration)
+		.EUt(EU)
+	.save(event.provider);
+	}
+	test("test1", "minecraft:diamond", "minecraft:dirt", 45, 24)
+
+	//EBF
+	event.builder("electric_blast_furnace", "mysterious-cube")
+		.itemInputs("16x ae2:charged_certus_quartz_crystal")
+		.itemInputs("ae2:not_so_mysterious_cube")
+		.inputFluids("kubejs:energized_ooze 1000")
+		.itemOutputs("ae2:mysterious_cube")
+		.blastFurnaceTemp(1200)
+		.duration(640)
+		.EUt(120)
+	.save(event.provider);
 	//.notConsumable("minecraft:oak_sapling")	
 	//GreenHouse("minecraft:oak_sapling", 1, "minecraft:air", "2x minecraft:oak_sapling", "64x minecraft:oak_log", "minecraft:air")
 })
+

@@ -12,7 +12,28 @@ StartupEvents.registry('item', event => {
 	event.create('mesh_bronze','createsifter:mesh').displayName('Bronze Mesh').parentModel("createsifter:block/meshes/custom_mesh").texture("1", "kubejs:item/mesh_bronze")
 	event.create('catalyst.copper_bee').displayName('Copper Bee Catalyst')
 	event.create('comb.copper_group').displayName('Copper Group Comb').texture('kubejs:item/comb.base').color(0, 0xFF6900)
-	event.create('chunk.banded_iron').displayName('Banded Iron Ore Chunk').parentModel('kubejs:item/chunk_ore').texture('kubejs:item/chunk_ore_overlay').color(0, 0x845252)
+})
+//.color(0, 0x191919).color(0, 0x845252)
+GTCEuStartupEvents.element(event => {
+    console.info("add a new element")
+    event.create(27, 177, -1, null, "test_element", "Test", false);
+})
+
+GTCEuStartupEvents.material(event => {
+    console.info("create a new material")
+    event.create("mana_steel")
+        .ingot(1)
+        .element(GTElements.get("test_element"))
+        .color(0x2176ff).iconSet(GTMaterialIconSet.METALLIC)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_FRAME)
+    .buildAndRegister();
+
+	event.create("fluix")
+		.gem(1)
+        .element(GTElements.get("test_element"))
+        .color(0x7a14f7).iconSet(GTMaterialIconSet.CERTUS)
+        .flags(GTMaterialFlags.GENERATE_FINE_WIRE)
+    .buildAndRegister();
 })
 
 StartupEvents.registry('fluid', event => {
@@ -75,7 +96,7 @@ GTCEuStartupEvents.recipeType(event => {
 		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
 		.setSound(GTSoundEntries.ARC)
 	.setMaxConditions(2);
-	
+
 	event.create("fusion_mk0", "kinetic-multi")
 		.setEUIO("IN")
 		.setMaxIOSize(0, 0, 2, 1)
@@ -89,6 +110,13 @@ GTCEuStartupEvents.recipeType(event => {
 		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
 		.setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
 	.setSound(GTSoundEntries.ARC);
+
+	event.create("electric_sieve", "electric")
+		.setEUIO("IN")
+		.setMaxIOSize(2, 18, 0, 0)
+		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+		.setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, FillDirection.LEFT_TO_RIGHT)
+	.setSound(GTSoundEntries.MACERATOR);
 })
 
 GTCEuStartupEvents.machine(event => {
@@ -144,6 +172,8 @@ GTCEuStartupEvents.machine(event => {
 
 	event.simpleSteamMachines("primitive_assembler", "PrimitiveAssembler_recipe_type");
 
+	event.simpleMachines("electric_sieve", "electric_sieve", tier => 3200, GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV);
+
 	event.simpleMachines("energizer", "energizer_recipe_type", tier => 3200, GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV);
 
 	event.simpleMultiblock("Improved Coke Oven")
@@ -183,7 +213,7 @@ GTCEuStartupEvents.machine(event => {
 		.workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel",
 		"gtceu:block/multiblock/implosion_compressor", false)
 	.register();
-	
+
 	event.simpleMultiblock("fusion_mk0")
 		.rotationState(RotationState.ALL)
 		.recipeType("fusion_mk0")

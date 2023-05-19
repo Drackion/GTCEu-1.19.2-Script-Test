@@ -105,6 +105,7 @@ if (Platform.isLoaded('exnihilosequentia')) {
             let ColorSapphireGreen = 0x5DBA79
             let ColorScheelite = 0xAE7A11
             let ColorSilver = 0xA7A7C2
+            let ColorSheldonite = 0xE3E3AB
             let ColorSoapstone = 0x4E774E
             let ColorSodalite = 0x1010CC
             let ColorSpessartine = 0x7A3030
@@ -126,6 +127,7 @@ if (Platform.isLoaded('exnihilosequentia')) {
             let ColorVanadiumMagnetite = 0x1E1E34
             let ColorWulfenite = 0xC46200
             let ColorZeolite = 0xC4BCBC
+            let ColorZinc = 0xEBEBFA
 
         //Stone
             function stone(id, name, base, overlay, color){
@@ -203,10 +205,102 @@ if (Platform.isLoaded('exnihilosequentia')) {
                         stone('lithium', 'Lithium', ChunkStone, OverlayChunk, ColorLithium)
                 //Granite
                     //String
+                        stone('apatite', 'Apatite', GemStone, OverlayGem, ColorApatite)
+                        stone('tricalcium_phosphate', 'Tricalcium Phosphate', ChunkStone, OverlayChunk, ColorTricalciumPhosphate)
+                        stone('bauxite', 'Bauxite', ChunkStone, OverlayChunk, ColorBauxite)
+                        stone('aluminium', 'Aluminium', ChunkStone, OverlayChunk, ColorAluminium)
+                        stone('ilmenite', 'Ilmenite', ChunkStone, OverlayChunk, ColorIlmenite)
+                        stone('magnetite', 'Magnetite', ChunkStone, OverlayChunk, ColorMagnetite)
+                        //Iron on line - 175
+                        stone('vanadaium_magnetite', 'Vanadaium Magnetite', ChunkStone, OverlayChunk, ColorVanadiumMagnetite)
+                        stone('gold', 'Gold', ChunkStone, OverlayChunk, ColorGold)
+                        stone('quartzite', 'Quartzite', GemStone, OverlayGem, ColorQuartzite)
+                        stone('barite', 'Barite', ChunkStone, OverlayChunk, ColorBarite)
+                        stone('certus_quartz', 'Certus Quartz', GemStone, OverlayGem, ColorCertusQuartz)
+                        stone('tetrahedrite', 'Tetrahedrite', ChunkStone, OverlayChunk, ColorTetrahedrite)
+                        //Copper on line - 177
+                        stone('stibnite', 'Stibnite', ChunkStone, OverlayChunk, ColorStibnite)
                     //Bronze
+                        //Redstone on line - 164
+                        //Ruby on line - 165
+                        //Cinnabar on line - 166
+                        //Chromite on line - 167
+                        stone('bornite', 'Bornite', ChunkStone, OverlayChunk, ColorBornite)
+                        stone('chalcocite', 'Chalcocite', GemStone, OverlayGem, ColorChalcocite)
+                        stone('lazurite', 'Lazurite', GemStone, OverlayGem, ColorLazurite)
+                        stone('sodalite', 'Sodalite', GemStone, OverlayGem, ColorSodalite)
+                        stone('lapis', 'Lapis', GemStone, OverlayGem, ColorLapis)
+                        stone('calcite', 'Calcite', ChunkStone, OverlayChunk, ColorCalcite)
+                        //Topaz on line - 172
+                        //Blue Topaz on line - 173
                     //Steel
+                        //Chalcopyrite on line - 175
+                        //Pyrite on line - 177
+                        //Yellow Limonite on line - 179
+                        //Bastnasite on line - 181
+                        //Monazite on line - 182
+                        //Neodymium on line - 183
+                        //Garnierite on line - 184
+                        //Nickel on line - 185
+                        //Cobaltite on line - 186
+                        //Pentlandite on line - 187
+                        //Pitchblende on line - 191
+                        //Uraninite on line - 192
+                        stone('kyanite', 'Kyanite', ChunkStone, OverlayChunk, ColorKyanite)
+                        stone('mica', 'Mica', GemStone, OverlayGem, ColorMica)
+                        //Cassiterite on line - 144
+                        stone('pollucite', 'Pollucite', ChunkStone, OverlayChunk, ColorPollucite)
                     //Aluminium
+                        //Graphite on line - 193
+                        //Diamond on line - 194
+                        //Coal on line - 137
+                        stone('wulfenite', 'Wullfenite', ChunkStone, OverlayChunk, ColorWulfenite)
+                        stone('molybdenite', 'Molybdenite', ChunkStone, OverlayChunk, ColorMolybdenite)
+                        stone('powellite', 'Powellite', ChunkStone, OverlayChunk, ColorPowellite)
+                        //Soapstone on line - 200
+                        //Talc on line - 201
+                        //Scheelite on line - 202
+                        //Tungstate on line - 203
+                        //Lithium on line - 204
                 //Diorite
+                    //String
+                        //Bauxite on line - 209
+                        //Aluminium on line - 210
+                        //Ilmenite on line - 211
+                        //Chalcopyrite on line - 175
+                        //Cassiterite on line - 144
+                        stone('alunite', 'Alunite', ChunkStone, OverlayChunk, ColorAlunite)
+                        //Quartzite on line - 216
+                        //Barite on line - 217
+                        //Certus Quartz on line - 218
+                        //Tin on line - 143
+                    //Bronze
+                        //Bornite on line - 227
+                        //Chalcocite on line - 228
+                        //Copper on line - 178
+                        //Galena on line - 150
+                        //Lead on line - 151
+                        //Silver on line - 152
+                        //Lazurite on line - 229
+                        //Sodalite on line - 230
+                        //Lapis on line - 231
+                        //Calcite on line - 232
+                    //Steel
+                        //Yellow Limonite on line - 179
+                        //Malachite on line - 180
+                        //Pitchblende on line - 191
+                        //Uraninite on line - 192
+                        //Kyanite on line - 248
+                        //Mica on line - 249
+                        //Cassiterite on line - 144
+                        //Pollucite on line - 251
+                    //Aluminium
+                        //Graphite on line - 193
+                        //Diamond on line - 194
+                        //Coal on line - 137
+                        //Soapstone on line - 200
+                        //Talc on line - 201
+                        //Pentlandite on line - 187
         //Sandy
             function sand(id, name, base, overlay, color){
                 event.create(`chunk.${id}_sand`).displayName(`${name} Sandy Chunk`).textureJson({layer0: base, layer1: overlay}).color(1, color)
@@ -246,30 +340,87 @@ if (Platform.isLoaded('exnihilosequentia')) {
                 event.create(`chunk.${id}_nether`).displayName(`${name} Nether Chunk`).textureJson({layer0: base, layer1: overlay}).color(1, color)
             }
             //Netherrack
-                //String
                 //Bronze
-                //Steel
+                    nether('chalcopyrite', 'Chalcopyrite', ChunkNether, OverlayChunk, ColorChalcopyrite)
+                    nether('iron', 'Iron', ChunkNether, OverlayChunk, ColorIron)
+                    nether('pyrite', 'Pyrite', ChunkNether, OverlayChunk, ColorPyrite)
+                    nether('copper', 'Copper', ChunkNether, OverlayChunk, ColorCopper)
+                    nether('yellow_limonite', 'Yellow Limonite', ChunkNether, OverlayChunk, ColorLimoniteYellow)
+                    nether('malachite', 'Malachite', ChunkNether, OverlayChunk, ColorMalachite)
+                    nether('magnetite', 'Magnetite', ChunkNether, OverlayChunk, ColorMagnetite)
+                    nether('vanadaium _magnetite', 'Vanadaium Magnetite', ChunkNether, OverlayChunk, ColorVanadiumMagnetite)
+                    nether('gold', 'Gold', ChunkNether, OverlayChunk, ColorGold)
+                    nether('nether_quartz', 'Nether Quartz', ChunkNether, OverlayChunk, ColorNetherQuartz)
+                    nether('sulfur', 'Sulfur', ChunkNether, OverlayChunk, ColorNetherQuartz)
+                    nether('sphalerite', 'Sphalerite', ChunkNether, OverlayChunk, ColorSphalerite)
+                    nether('tetrahedrite', 'Tetrahedrite', ChunkNether, OverlayChunk, ColorTetrahedrite)
+                    nether('stibnite', 'Stibnite', ChunkNether, OverlayChunk, ColorStibnite)
                 //Aluminium
+                    nether('garnierite', 'Garnierite', ChunkNether, OverlayChunk, ColorGarnierite)
+                    nether('nickel', 'Nickel', ChunkNether, OverlayChunk, ColorNickel)
+                    nether('cobaltite', 'Cobaltite', ChunkNether, OverlayChunk, ColorCobaltite)
+                    nether('pentlandite', 'Pentlandite', ChunkNether, OverlayChunk, ColorPentlandite)
+                    nether('redstone', 'Redstone', ChunkNether, OverlayChunk, ColorRedstone)
+                    nether('ruby', 'Ruby', GemNether, OverlayGem, ColorRuby)
+                    nether('cinnabar', 'Cinnabar', GemNether, OverlayGem, ColorCinnabar)
+                    nether('chromite', 'Chromite', ChunkNether, OverlayChunk, ColorChromite)
+                    nether('electrotine', 'Electrotine', ChunkNether, OverlayChunk, ColorElectrotine)
+                    nether('topaz', 'Topaz', GemNether, OverlayGem, ColorTopaz)
+                    nether('blue_topaz', 'Blue Topaz', GemNether, OverlayGem, ColorTopazBlue)
         //End
             function end(id, name, base, overlay, color){
                 event.create(`chunk.${id}_end`).displayName(`${name} End Chunk`).textureJson({layer0: base, layer1: overlay}).color(1, color)
             }
             //Endstone
-                //String
                 //Bronze
+                    end('beryllium', 'Beryllium', ChunkEnd, OverlayChunk, ColorBeryllium)
+                    end('emerald', 'Emerald', GemEnd, OverlayGem, ColorEmerald)
+                    end('thorium', 'Thorium', ChunkEnd, OverlayChunk, ColorThorium)
                 //Steel
+                    end('grossular', 'Grossular', GemEnd, OverlayGem, ColorGrossular)
+                    end('spessartine', 'Spessartine', GemEnd, OverlayGem, ColorSpessartine)
+                    end('pyrolusite', 'Pyrolusite', ChunkEnd, OverlayChunk, ColorPyrolusite)
+                    end('tantalite', 'Tantalite', ChunkEnd, OverlayChunk, ColorTantalite)
+                    end('wulfenite', 'Wulfenite', ChunkEnd, OverlayChunk, ColorWulfenite)
+                    end('molybdenite', 'Molybdenite', ChunkEnd, OverlayChunk, ColorMolybdenite)
+                    end('powellite', 'Powellite', ChunkEnd, OverlayChunk, ColorPowellite)
+                    end('garnierite', 'Garnierite', ChunkEnd, OverlayChunk, ColorGarnierite)
+                    end('nickel', 'Nickel', ChunkEnd, OverlayChunk, ColorNickel)
+                    end('cobaltite', 'Cobaltite', ChunkEnd, OverlayChunk, ColorCobaltite)
+                    end('pentlandite', 'Pentlandite', ChunkEnd, OverlayChunk, ColorPentlandite)
+                    end('bentonite', 'Bentonite', ChunkEnd, OverlayChunk, ColorBentonite)
+                    end('magnesite', 'Magnesite', ChunkEnd, OverlayChunk, ColorMagnesite)
+                    end('olivine', 'Olivine', GemEnd, OverlayGem, ColorOlivine)
+                    end('chromite', 'Chromite', ChunkEnd, OverlayChunk, ColorChromite)
+                    end('sheldonite', 'Sheldonite', ChunkEnd, OverlayChunk, ColorSheldonite)
+                    end('palladium', 'Palladium', ChunkEnd, OverlayChunk, ColorPalladium)
+                    end('scheelite', 'Scheelite', ChunkEnd, OverlayChunk, ColorScheelite)
+                    end('tungstate', 'Tungstate', ChunkEnd, OverlayChunk, ColorTungstate)
+                    end('lithium', 'Lithium', ChunkEnd, OverlayChunk, ColorLithium)
                 //Aluminium
-})
+                    end('naquadah', 'Naquadah', ChunkEnd, OverlayChunk, ColorNaquadah)
+                    end('lazurite', 'Lazurite', GemEnd, OverlayGem, ColorLazurite)
+                    end('sodalite', 'Sodalite', GemEnd, OverlayGem, ColorSodalite)
+                    end('lapis', 'Lapis', GemEnd, OverlayGem, ColorLapis)
+                    end('calcite', 'Calcite', ChunkEnd, OverlayChunk, ColorCalcite)
+})}
 if (Platform.isLoaded('gtceu')) {
-    GTCEuStartupEvents.recipeType(event => {
-        event.create("electric_sieve", "drack-electric")
-		.setEUIO("IN")
-		.setMaxIOSize(2, 63, 0, 0)
-		.setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
-		.setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, FillDirection.UP_TO_DOWN)
-	.setSound(GTSoundEntries.MACERATOR);
+    GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
+        
+        event.create("electric_sieve")
+            .category('drack-sieve')
+            .setEUIO('IN')
+            .setMaxIOSize(2, 63, 0, 0)
+            .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, FillDirection.UP_TO_DOWN)
+            .setSound(GTSoundEntries.MACERATOR);
     })
-    GTCEuStartupEvents.machine(event => {
-        event.simpleMachines("electric_sieve", "electric_sieve", tier => 3200, GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV);
+    GTCEuStartupEvents.registry('gtceu:machine', event => {
+        //event.create("steam_sieve", "steam").recipeType('electric_sieve')
+
+        event.create("electric_sieve", 'simple')
+            .recipeType('electric_sieve')
+            .tankScalingFunction(tier => 3200)
+            .tiers(GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV);
     })
-}}
+}
